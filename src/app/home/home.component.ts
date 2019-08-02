@@ -32,16 +32,19 @@ export class HomeComponent implements OnInit {
   }
   featuredPhotoSelected(event: any){
     const file: File = event.target.files[0];
-    console.log("Selected filename: ", file.name);
+    //console.log("Selected filename: ", file.name);
 
     const metaData = {'contentType' : file.type};
-  // file = Math.floor(Date.now() / 1000);
-    const ImageRef = this.storageRef.child(`my-rooms/${file}.jpg`);
-    ImageRef.put(file, metaData);
-    this.room.pic = ImageRef.getDownloadURL();
-    console.log(this.room.pic);
+    //this.room.pic = Math.floor(Date.now() / 1000);
+   // this.room.pic = file.name;
+    const ImageRef = this.storageRef.child(`my-rooms/${file.name}`);
+    ImageRef.put(file, metaData).snapshot.ref.getDownloadURL().then(function(downloadURL){
+      console.log('File available at', downloadURL );
+    });
+    //this.room.pic = ImageRef.getDownloadURL();
+    //console.log(file.name);
 
-    console.log("Uploading: ", file.name);
+    //console.log(ImageRef);
    // console.log(this.pic.name);
     //this.pic = file.name;
    }

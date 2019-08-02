@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { room } from '../model/room';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { HttpClient } from '@angular/common/http';
->>>>>>> 56ffc1d265ef9baccf2e2ac5891dbad309a26367
 
 @Component({
   selector: 'app-home',
@@ -13,15 +10,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-<<<<<<< HEAD
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-=======
   pic;
   room = {} as room;
   selectedFile = null;
@@ -32,7 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
   onFileSelect(event){
-    this.selectedFile = event.target.files[0];
+   // this.selectedFile = event.target.files[0];
 
 
    }
@@ -73,4 +61,3 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("/home");
     }
   }
->>>>>>> 56ffc1d265ef9baccf2e2ac5891dbad309a26367

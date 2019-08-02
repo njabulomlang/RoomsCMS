@@ -14,39 +14,45 @@ export class HomeComponent implements OnInit {
   pic : any;
   room = {} as room;
   rooms;
-  selectedFile = null;
+  users;
+   //selectedFile = null;
   ref = firebase.database().ref('rooms/');
   storageRef = firebase.storage().ref();
+  ref2 = firebase.database().ref('users/');
 
   constructor(private router : Router, private http: HttpClient) {
     this.featuredPhotoSelected
 
     this.ref.on('value', resp => {
       this.rooms = snapshotToArray(resp);
-        console.log();
+        console.log(resp.val());
 
-      })
+      });
+      this.ref2.on('value', resp => {
+        this.users = snapshotToArray(resp);
+          console.log(resp.val());
+
+        })
+
+
    }
 
   ngOnInit() {
   }
   featuredPhotoSelected(event: any){
-    const file: File = event.target.files[0];
-    //console.log("Selected filename: ", file.name);
-
-    const metaData = {'contentType' : file.type};
-    //this.room.pic = Math.floor(Date.now() / 1000);
-   // this.room.pic = file.name;
-    const ImageRef = this.storageRef.child(`my-rooms/${file.name}`);
-    ImageRef.put(file, metaData).snapshot.ref.getDownloadURL().then(function(downloadURL){
-      console.log('File available at', downloadURL );
-    });
-    //this.room.pic = ImageRef.getDownloadURL();
-    //console.log(file.name);
-
-    //console.log(ImageRef);
-   // console.log(this.pic.name);
-    //this.pic = file.name;
+    const i = event.target.files[0];
+   console.log(i);
+   const upload = this.storageRef.child(i.name).put(i);
+   upload.on('state_changed', snapshot => {
+     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+     console.log('upload is: ', progress , '% done.');
+   }, err => {
+   }, () => {
+     upload.snapshot.ref.getDownloadURL().then(dwnURL => {
+       console.log('File avail at: ', dwnURL);
+       this.room.pic = dwnURL;
+     });
+   });
    }
 
  /* upload() {
@@ -75,14 +81,14 @@ export class HomeComponent implements OnInit {
       Feautures: room.feautures,
       Price: room.price,
       Description : room.description,
-      Pic: room.pic.name
+      Pic: room.pic
     });
      this.room.name = '';
      this.room.hotelName = '';
      this.room.feautures = '';
      this.room.description = '';
      this.room.price = null;
-
+     this.room.pic = null;
     this.router.navigateByUrl("/home");
     }
   }

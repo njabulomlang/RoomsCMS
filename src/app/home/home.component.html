@@ -1,0 +1,16 @@
+<p>
+  home works!
+</p>
+<form>
+  <div class="form-group">
+    <input type="file" (change)="onFileSelect($event)">
+    <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name">
+    <input type="text" class="form-control-file" [(ngModel)]="room.feautures" placeholder="Room features" name="feature">
+    <input type="text" class="form-control-file" [(ngModel)]="room.price" placeholder="Price" name="price">
+    <input type="text" class="form-control-file" [(ngModel)]="room.description" placeholder="Description" name="description">
+    <input type="text" class="form-control-file" [(ngModel)]="room.hotelName" placeholder="Hotel name" name="hotel">
+    <button (click)="addRoom(room)">Add room</button>
+  </div>
+</form>
+
+

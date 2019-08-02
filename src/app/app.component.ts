@@ -13,15 +13,16 @@ export class AppComponent {
 
   constructor(private router: Router){
   firebase.initializeApp(firebaseConfig);
-  this.userLoggedIn();
+  this.userLogged();
   }
-  userLoggedIn(){
-    firebase.auth().onAuthStateChanged((user)=>{
+  userLogged(){
+    firebase.auth().onAuthStateChanged((user) =>{
       if(user){
         this.router.navigateByUrl("/home");
-      } else {
-        this.router.navigateByUrl("/login");
-      }
+
+      } else
+      this.router.navigateByUrl("/login");
     })
   }
+
 }

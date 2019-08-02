@@ -3,6 +3,7 @@ import { room } from '../model/room';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { HttpClient } from '@angular/common/http';
+import { snapshotToArray } from '../environment';
 
 @Component({
   selector: 'app-home',
@@ -10,26 +11,46 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  pic;
+  pic : any;
   room = {} as room;
+  rooms;
   selectedFile = null;
   ref = firebase.database().ref('rooms/');
   storageRef = firebase.storage().ref();
-  constructor(private router : Router, private http: HttpClient) { }
+
+  constructor(private router : Router, private http: HttpClient) {
+    this.featuredPhotoSelected
+
+    this.ref.on('value', resp => {
+      this.rooms = snapshotToArray(resp);
+        console.log();
+
+      })
+   }
 
   ngOnInit() {
   }
-  onFileSelect(event){
-    this.selectedFile = event.target.files[0];
+  featuredPhotoSelected(event: any){
+    const file: File = event.target.files[0];
+    console.log("Selected filename: ", file.name);
 
+    const metaData = {'contentType' : file.type};
+  // file = Math.floor(Date.now() / 1000);
+    const ImageRef = this.storageRef.child(`my-rooms/${file}.jpg`);
+    ImageRef.put(file, metaData);
+    this.room.pic = ImageRef.getDownloadURL();
+    console.log(this.room.pic);
 
+    console.log("Uploading: ", file.name);
+   // console.log(this.pic.name);
+    //this.pic = file.name;
    }
 
-  upload() {
+ /* upload() {
    /// this.http.post('',)
-   // let storageRef = firebase.storage().ref();
+    let storageRef = firebase.storage().ref();
     const filename = Math.floor(Date.now() / 1000);
-    const imageRef = this.storageRef.child(`my-rooms/${filename}.jpg`);
+    const imageRef = storageRef.child(`my-rooms/${filename}.jpg`);
 
     imageRef.putString(this.pic, firebase.storage.StringFormat.DATA_URL)
     .then((snapshot) => {
@@ -39,10 +60,11 @@ export class HomeComponent implements OnInit {
 
      // loaders.present();
     })
-  }
+  }*/
 
   addRoom(room : room){
-    this.upload()
+  //  this.upload()
+  //this.featuredPhotoSelected();
       let newUser = this.ref.push();
     newUser.set({
       Room_name: room.name,
@@ -50,7 +72,7 @@ export class HomeComponent implements OnInit {
       Feautures: room.feautures,
       Price: room.price,
       Description : room.description,
-      Pic: this.room.pic
+      Pic: room.pic.name
     });
      this.room.name = '';
      this.room.hotelName = '';

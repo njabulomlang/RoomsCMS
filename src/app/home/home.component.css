@@ -1,53 +1,61 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+
+
 
 }
-.wrapper{
-    width: 1170px;
-    margin: auto;
+li, a, button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+
 }
 header{
-    background: linear-gradient(rgba(63, 116, 175, 0.6),rgba(26, 80, 131, 0.6)),url(https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80);
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: fixed;
-    -webkit-background-size: cover;
-    background-position: center center;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%
 }
-.nav-area{
-    float: right;
-    list-style: none;
-    margin-top: 30px;
+.nav-Links li{
+display: inline-block;
+padding: 0px 20px;
 }
-.nav-area li a{
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 16px;
+.nav-Links li a{
+ transition: all 0.3 ease 0s;
+
+    }
+
+button{
+    padding: 9px 25px;
+}
+
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.picture{
+    width: 500px;
+    height: 400px;
+    padding-top: 60px;
+    margin-right: 60px
+   
 
 }
-.nav-area li a:hover{
-    background: #fff;
-    color: #333;
-
+ .img{
+    width: 100%;
+    height: 100%;
+   
 }
-.welcome-text{
-    position: absolute;
-    width: 600px;
-    height: 200px;
-    margin: 20% 30%;
-    text-align: center;
-    justify-content: center;
-    color: aliceblue;
-
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.btn{
-    height: 60px;
-    width: 100px;
-    border-radius: 80px;
-  
-}
+   

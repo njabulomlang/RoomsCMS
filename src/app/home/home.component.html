@@ -1,73 +1,43 @@
 <body>
-<!-- 
 
-    
-    <div class="banner">
-    
-      <p class="tagline">Proudly South African hotel One of the proudly</p>
-    
-    <div class="row">
-      <div class="row_cell">
-        <p>Standard Rooms</p>
-        <img src="" width="150" height="150"><br>
-        <button>View</button>
-      </div>
-      <div class="row_cell">
-        <p>Exclusive Rooms</p>
-        <img src="" width="150" height="150"><br>
-        <button>View</button>
-    
-      </div>
-        <div class="row_cell">
-        <p>Sharing Rooms</p>
-        <img src="" width="150" height="150"><br>
-        <button>View</button>
-    
-      </div>
-      <div class="row_cell">
-        <p>Executive Rooms</p>
-        <img src="" width="150" height="150"><br>
-        <button>View</button>
-      </div>
-    
-        <div class="row_cell">
-        <p>Executive Rooms</p>
-        <img src="" width="150" height="150"><br>
-        <button>View</button>
-      </div>
-    
-        <div class="row_cell">
-        <p>Executive Rooms</p>
-        <img src="" width="150" height="150"><br>
-        <button>View</button>
-      </div>
-    </div>
-    </div>
-    
-
-<form>
-  <div class="form-group">
-    <input type="file" (change)="featuredPhotoSelected($event)"/>
-    <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name">
-    <input type="text" class="form-control-file" [(ngModel)]="room.feautures" placeholder="Room features" name="feature">
-    <input type="text" class="form-control-file" [(ngModel)]="room.price" placeholder="Price" name="price">
-    <input type="text" class="form-control-file" [(ngModel)]="room.description" placeholder="Description" name="description">
-    <input type="text" class="form-control-file" [(ngModel)]="room.hotelName" placeholder="Hotel name" name="hotel">
-    <button (click)="addRoom(room)">Add room</button>
-  </div>
-
-  <div *ngFor="let item of rooms">
-    <img style=" margin: auto" src="{{item.Pic}}" alt="my_rooms" height="150" width="100%">
-    <div style="display: flex; flex-direction: column; margin: auto">
-    <h3 style="color: rgb(54, 11, 22); font-size: 15px"> {{item.Name}} - R {{item.Price}} p.m</h3>
-     <p style="font-style:oblique">{{item.Description}}</p>
-  </div>
-  <button [routerLink]="['/view', item.key]">View</button>
-  </div>
-
+<header>
+  <img class="logo" src="" alt="">
+  <nav>
+    <ul class="nav_Links">
+      <li><a href="#">Profile</a></li>
+     
+    </ul>
+  </nav>
+  <a class="cta" href="#"><button>Sign Out</button></a>
+</header>
   
-</form> -->
 
+
+  <form>
+
+
+    <div class="cardcontainer">
+        <div class="picture" *ngFor="let item of rooms">
+            <div class="img">
+              <img src="{{item.Pic}}">
+            </div>
+      
+            <div class="data">
+              <p>{{item.Description}}</p>
+              <p> {{item.Name}}</p>
+              <p> R{{item.Price}}</p>
+            </div>
+      
+      
+          </div>
+    </div>
+<br>
+  <br>
+
+  <button [routerLink]="['/add']">Add room</button>  
+  </form>
+
+  <!-- 
 <header>
   <div class="wrapper">
 
@@ -86,5 +56,5 @@
   <button class="btn">Add Room</button>
 </div>
  
-</header>
-  </body>
+</header> -->
+</body>

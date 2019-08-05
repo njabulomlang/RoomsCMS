@@ -1,0 +1,54 @@
+
+
+<!-- <div class="form-group">
+  <input type="file" (change)="featuredPhotoSelected($event)"/>
+  <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name">
+  <input type="text" class="form-control-file" [(ngModel)]="room.feautures" placeholder="Room features" name="feature">
+  <input type="text" class="form-control-file" [(ngModel)]="room.price" placeholder="Price" name="price">
+  <input type="text" class="form-control-file" [(ngModel)]="room.description" placeholder="Description" name="description">
+  <input type="text" class="form-control-file" [(ngModel)]="room.hotelName" placeholder="Hotel name" name="hotel">
+  <button (click)="addRoom(room)">Add room</button>
+</div> -->
+
+<div class="flex-container">
+
+
+  
+  
+
+  
+  
+<div class="container">
+<br>
+
+  <h1>Enter Full Room details</h1>
+  <form>
+    <div class="form-group">
+      <label for="usr">Upload Image</label>
+        <input  type="file" (change)="featuredPhotoSelected($event)" class="imp"/>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Features</label>
+      <div> <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Price</label>
+      <div>  <input type="text" class="form-control-file" [(ngModel)]="room.price" placeholder="Price" name="price"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Description</label>
+      <div> <input type="text" class="form-control-file" [(ngModel)]="room.description" placeholder="Description" name="description"></div>
+
+      <div class="form-group">
+        <label for="pwd">Hotel </label>
+        <div>  <input type="text" class="form-control-file" [(ngModel)]="room.hotelName" placeholder="Hotel name" name="hotel"></div>
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+<button (click)="addRoom(room)">Add room</button> 
+  
+</div>

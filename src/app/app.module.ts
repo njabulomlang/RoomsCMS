@@ -12,6 +12,7 @@ import { UsersComponent } from './users/users.component';
 import { UploadListComponent } from './uploads/upload-list/upload-list.component';
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
 import { ViewRoomComponent } from './view-room/view-room.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { ViewRoomComponent } from './view-room/view-room.component';
     UsersComponent,
     UploadListComponent,
     UploadFormComponent,
-    ViewRoomComponent
+    ViewRoomComponent,
+    PageComponent
+    
   ],
   imports: [
     BrowserModule,

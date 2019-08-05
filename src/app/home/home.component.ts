@@ -71,26 +71,6 @@ export class HomeComponent implements OnInit {
     })
   }*/
 
-  addRoom(room : room){
-  //  this.upload()
-  //this.featuredPhotoSelected();
-      let newUser = this.ref.push();
-    newUser.set({
-      Room_name: room.name,
-      Hotelname: room.hotelName,
-      Feautures: room.feautures,
-      Price: room.price,
-      Description : room.description,
-      Pic: room.pic
-    });
-     this.room.name = '';
-     this.room.hotelName = '';
-     this.room.feautures = '';
-     this.room.description = '';
-     this.room.price = null;
-     this.room.pic = null;
-    this.router.navigateByUrl("/home");
-    }
 
     
   }

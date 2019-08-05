@@ -1,0 +1,24 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+   
+    text-align: center;
+    height: 100%;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Titillium Web', sans-serif;
+    background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781));
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+ 
+  }
+  .imp{
+   width: 300px;
+  }

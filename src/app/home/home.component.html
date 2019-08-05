@@ -51,7 +51,7 @@
     </body>
 <form>
   <div class="form-group">
-    <input type="file">
+    <input type="file" (change)="featuredPhotoSelected($event)"/>
     <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name">
     <input type="text" class="form-control-file" [(ngModel)]="room.feautures" placeholder="Room features" name="feature">
     <input type="text" class="form-control-file" [(ngModel)]="room.price" placeholder="Price" name="price">
@@ -59,21 +59,18 @@
     <input type="text" class="form-control-file" [(ngModel)]="room.hotelName" placeholder="Hotel name" name="hotel">
     <button (click)="addRoom(room)">Add room</button>
   </div>
-</form> -->
 
+  <div *ngFor="let item of rooms">
+    <img style=" margin: auto" src="{{item.Pic}}" alt="my_rooms" height="150" width="100%">
+    <div style="display: flex; flex-direction: column; margin: auto">
+    <h3 style="color: rgb(54, 11, 22); font-size: 15px"> {{item.Name}} - R {{item.Price}} p.m</h3>
+     <p style="font-style:oblique">{{item.Description}}</p>
+  </div>
+  <button [routerLink]="['/view', item.key]">View</button>
+  </div>
 
-<body>
-<div id="header">
-<div id="nav">
-<div id="section">
   
-</div>
-
-</div>
-
-</div>
-
-
+</form>
 
 
   </body>

@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UploadListComponent } from './uploads/upload-list/upload-list.component';
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
-import { RoomsComponent } from './rooms/rooms.component';
+import { ViewRoomComponent } from './view-room/view-room.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,7 @@ import { RoomsComponent } from './rooms/rooms.component';
     UsersComponent,
     UploadListComponent,
     UploadFormComponent,
-    RoomsComponent
-
+    ViewRoomComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,7 @@
               <p>{{item.Description}}</p>
               <p> {{item.Name}}</p>
               <p> R{{item.Price}}</p>
+              <button [routerLink]="['/add']">Add room</button>  
             </div>
       
       
@@ -33,8 +34,10 @@
     </div>
 <br>
   <br>
+<div class="add">
 
-  <button [routerLink]="['/add']">Add room</button>  
+</div>
+  
   </form>
 
   <!-- 

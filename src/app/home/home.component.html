@@ -5,12 +5,12 @@
   <nav>
     <ul class="nav_Links">
       <li><a href="#">Profile</a></li>
-     
+
     </ul>
   </nav>
   <a class="cta" href="#"><button>Sign Out</button></a>
 </header>
-  
+
 
 
   <form>
@@ -21,27 +21,28 @@
             <div class="img">
               <img src="{{item.Pic}}">
             </div>
-      
+
             <div class="data">
               <p>{{item.Description}}</p>
               <p> {{item.Name}}</p>
               <p> R{{item.Price}}</p>
+              <button [routerLink]="['/view', item.key]">View</button>
             </div>
-      
-      
+
+
           </div>
     </div>
 <br>
   <br>
 
-  <button [routerLink]="['/add']">Add room</button>  
+
   </form>
 
-  <!-- 
+  <!--
 <header>
   <div class="wrapper">
 
- 
+
   <div class="logo">
 
 
@@ -50,11 +51,13 @@
     <li><a href="">Profile</a></li>
     <li><a href="">Signout</a></li>
   </ul>
-</div> 
+</div>
 <div class="welcome-text">
   <h2>Experiance the best hotel Experiance...</h2> <br>
   <button class="btn">Add Room</button>
 </div>
- 
+
 </header> -->
 </body>
+
+<button style="margin-top: 5%" [routerLink]="['/add']">Add room</button>

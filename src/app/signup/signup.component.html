@@ -13,19 +13,17 @@
         <h2>REGISTER</h2>
         <form>
           <div>
-              <input type="text" class="text" [(ngModel)]="email" name="email"  placeholder="Create Email">
+              <input type="text" class="inputbox" placeholder="Username"  [(ngModel)]="email" name="email" >
               <br>
               <br>
        
-              <input type="password" class="text" [(ngModel)]="password" name="password"  placeholder="New Password">
+             <input type="password"  class="inputbox" placeholder="Password" [(ngModel)]="password" name="password" >
              <br>
               <br>
 
               <div>
-               
-            <button class="signin" (click)="Register()"> Sign up</button>
+                <button type="submit" class="logbtn" (click)="Register()">LOGIN</button>
               </div>
-              <br>
            
           </div>
         </form><BR>

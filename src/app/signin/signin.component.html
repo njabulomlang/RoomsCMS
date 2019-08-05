@@ -1,21 +1,42 @@
 
 
-  <div class="container">
     <div class="container2">
     <div class="head">
 
     </div>
-    <div class="alrt"><p class="p_alrt">SIGNUP:</p></div>
+    <div class="alrt"></div>
 
-  <div class="labl">
+  <div class="lable">
+      <p class="p_alrt"></p>
+    <div class="centerdiv">
+        <img src="https://img.icons8.com/ios/50/000000/user-male-circle.png" id="profilepic">
+        <h2>SIGN-IN</h2>
+        <form>
+          <div>
+              <input type="text" class="inputbox" placeholder="Username"  [(ngModel)]="email" name="email" >
+              <br>
+              <br>
+       
+             <input type="password"  class="inputbox" placeholder="Password" [(ngModel)]="password" name="password" >
+             <br>
+              <br>
 
-      <input type="text"  placeholder="Username"  [(ngModel)]="email" style="height: 10%; margin: 5%;width: 70%;margin-left: 15%; background-color: transparent;">
-       <br>
-
-      <input type="password"  placeholder="Password" [(ngModel)]="password" style="height: 10%; margin: 5%; width: 70%;margin-left: 15%;background-color: transparent;">
-
-  </div>
-  <div class="now">
-    <div class="mov"><button class="logbtn" (click)="Login()">Login Now</button></div></div>
-  </div>
+              <div>
+                <button type="submit" class="logbtn" (click)="Login()">LOGIN</button>
+              </div>
+              <br>
+        
+              <DIV class="btnforgot">
+                  <button type="submit" class="logbtn" routerLink="/register" (click)="Register()">Create new account...</button>
+          </DIV>
+          </div>
+        </form><BR>
+          
     </div>
+
+     
+  </div>
+  <!-- <div class="now">
+    <div class="mov"><button class="logbtn" (click)="Login()">Login Now</button></div></div>
+  </div> -->
+  

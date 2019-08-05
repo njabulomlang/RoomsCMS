@@ -18,7 +18,15 @@ export class SignupComponent implements OnInit {
 
 
   Register(){
-   console.log(this.email);
+    firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+    .then( res =>{
+      console.log(res);
+      //this.navCtrl.push(HomePage);
+      this.router.navigateByUrl("/home") ;
+
+    })
+  //  console.log(this.email);
+
 
   }
 

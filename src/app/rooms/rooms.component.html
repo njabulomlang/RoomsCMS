@@ -1,1 +1,35 @@
-<p>rooms works!</p>
+
+<body>
+        <header>
+          <ul class="navigation-List">
+            <li class="navigation-item"><a href="#">Profile</a></li>
+            <li class="navigation-item"><a href="#">Profile</a></li>
+        
+          </ul>
+        </header>
+        <aside>
+          <h1> Add room details</h1>
+          <div class="flex-container">
+                <div> <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name"></div>
+                <div>  <input type="text" class="form-control-file" [(ngModel)]="room.feautures" placeholder="Room features" name="feature"></div>
+                <div>    <input type="text" class="form-control-file" [(ngModel)]="room.price" placeholder="Price" name="price"></div>
+                 <div>  <input type="text" class="form-control-file" [(ngModel)]="room.description" placeholder="Description" name="description"></div>
+                <div>    <input type="text" class="form-control-file" [(ngModel)]="room.hotelName" placeholder="Hotel name" name="hotel"></div>  
+              </div>
+              <button (click)="addRoom(room)">Add room</button>
+        </aside>
+        <main>
+      
+                 
+        </main>
+        <footer>
+          <ul class="navigation-List">
+            <li class="navigation-item"><a href="#">Terms of Use</a>
+        
+        
+            </li>
+          </ul>
+        </footer>
+        
+        
+          </body>

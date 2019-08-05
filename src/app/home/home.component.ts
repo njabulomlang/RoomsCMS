@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   users;
    //selectedFile = null;
   ref = firebase.database().ref('rooms/');
+ // ref = firebase.database().ref('rooms/');
   storageRef = firebase.storage().ref();
   ref2 = firebase.database().ref('users/');
 
@@ -72,5 +73,5 @@ export class HomeComponent implements OnInit {
   }*/
 
 
-    
+
   }

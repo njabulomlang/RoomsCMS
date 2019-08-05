@@ -12,8 +12,11 @@ export class ViewRoomComponent implements OnInit {
 
   key;
   ref = firebase.database().ref('rooms/');
+  refBook = firebase.database().ref();
   rooms : any;
-  
+  rName;
+ booking: any;
+ count: any;
   constructor(private router: ActivatedRoute, private rout: Router) {
     this.router.paramMap.subscribe((param) => {
       this.key = param.get('key');
@@ -21,8 +24,26 @@ export class ViewRoomComponent implements OnInit {
  })
  this.ref.orderByKey().equalTo(this.key).on('value', resp => {
    this.rooms = snapshotToArray(resp);
-     console.log(this.rooms);
+   resp.forEach(element => {
+      this.rName = element.val().Room_name;
+   });
+
    })
+
+   this.refBook.child('bookings').orderByChild('Room').equalTo(this.rName).on('value', (resp1) => {
+    this.count = resp1.val();
+    console.log(this.count);
+    if(resp1.exists()) {
+       this.booking = snapshotToArray(resp1);
+       console.log(this.booking);
+
+    }else {
+      console.log("Error!");
+
+    }
+   })
+
+  // this.refBook.child('bookings').orderByChild('')
    }
 
   ngOnInit() {

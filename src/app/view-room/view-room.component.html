@@ -4,8 +4,28 @@
 <p>{{room.Feautures}}</p>
 <p>{{room.Room_name}}</p>
 <p>{{room.Hotelname}}</p>
+<p>{{room.Hotelname}}</p>
+</div> -->
 
+<div class="cardcontainer">
+    <div class="picture" *ngFor="let item of rooms">
+        <div class="img">
+          <img src="{{item.Pic}}">
+        </div>
+
+        <div class="data">
+          
+          <p> {{item.Room_name}}</p>
+          <p> {{item.Hotelname}}</p>
+          <p>{{item.Feautures}}</p>
+          <p>R {{item.Price}}</p>
+
+          
+         
+        </div>
+
+
+      </div>
 </div>
 
-
-
+  

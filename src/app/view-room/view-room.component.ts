@@ -2,6 +2,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { snapshotToArray } from '../environment';
+import { room } from '../model/room';
 
 @Component({
   selector: 'app-view-room',
@@ -17,6 +18,7 @@ export class ViewRoomComponent implements OnInit {
   rName;
  booking: any;
  count: any;
+ room = {} as room;
   constructor(private router: ActivatedRoute, private rout: Router) {
     this.router.paramMap.subscribe((param) => {
       this.key = param.get('key');
@@ -45,6 +47,22 @@ export class ViewRoomComponent implements OnInit {
 
   // this.refBook.child('bookings').orderByChild('')
    }
+   editRoom(room:room){
+    let newUser = {
+      Room_name: room.name,
+      Hotelname: room.hotelName,
+      Feautures: room.feautures,
+      Price: room.price,
+      Description : room.description,
+      Pic: room.pic
+    };
+    // Get a key for a new Post.
+    var newPostKey = this.ref.push().key;
+
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+      return this.ref.update(newUser + newPostKey);
+   }
+
 
   ngOnInit() {
   }

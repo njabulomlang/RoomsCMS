@@ -1,3 +1,4 @@
+import { UpdateComponent } from './update/update.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,7 +17,8 @@ const routes: Routes = [
 {path: 'user', component : UsersComponent},
 {path: 'home', component : HomeComponent},
 { path:"view/:key", component: ViewRoomComponent},
-{path: 'add', component : PageComponent}
+{path: 'add', component : PageComponent},
+{path: 'update', component : UpdateComponent}
 ];
 
 @NgModule({

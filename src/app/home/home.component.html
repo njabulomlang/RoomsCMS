@@ -32,11 +32,25 @@
 
           </div>
     </div>
+
+
+      <div class="picture" *ngFor="let item of users">
+          <div class="img">
+            <img src="{{item.Profile_pic}}">
+          </div>
+
+          <div class="data">
+            <p>{{item.Fullname}}</p>
+            <p> {{item.Cellphone}}</p>
+
+            <!-- <button [routerLink]="['/view', item.key]">View</button> -->
+          </div>
+  </div>
 <br>
   <br>
 
 <div>
-  
+
 </div>
   </form>
 

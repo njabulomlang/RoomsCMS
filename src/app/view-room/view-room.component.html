@@ -1,10 +1,10 @@
 <div *ngFor="let room of rooms">
   <img src="{{room.Pic}}" height="100" width="100">
-{{room.Description}}
-<p>{{room.Feautures}}</p>
-<p>{{room.Room_name}}</p>
-<p>{{room.Hotelname}}</p>
-
+ <input [(ngModel)]="room.Description"/>
+ <input [(ngModel)]="room.Feautures" />
+ <input [(ngModel)]="room.Room_name" />
+ <input [(ngModel)]="room.Hotelname" />
+<button (click)="editRoom(room)">Update</button>
 </div>
 
 

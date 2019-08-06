@@ -13,6 +13,7 @@ import { UploadListComponent } from './uploads/upload-list/upload-list.component
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
 import { ViewRoomComponent } from './view-room/view-room.component';
 import { PageComponent } from './page/page.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PageComponent } from './page/page.component';
     UploadListComponent,
     UploadFormComponent,
     ViewRoomComponent,
-    PageComponent
+    PageComponent,
+    UpdateComponent
     
   ],
   imports: [

@@ -33,10 +33,10 @@ export class ViewRoomComponent implements OnInit {
    })
 
    this.refBook.child('bookings').orderByChild('Room').equalTo(this.rName).on('value', (resp1) => {
-    this.count = resp1.val();
-    console.log(this.count);
+   // this.count = resp1.val();
+   // console.log(this.count);
     if(resp1.exists()) {
-       this.booking = snapshotToArray(resp1);
+       this.booking = snapshotToArray(resp1).length;
        console.log(this.booking);
 
     }else {

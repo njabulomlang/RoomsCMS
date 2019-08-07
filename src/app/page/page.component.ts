@@ -26,16 +26,33 @@ export class PageComponent implements OnInit {
       this.rooms = snapshotToArray(resp);
         console.log(resp.val());
 
-      });  
+      });
 
    }
 
 
   ngOnInit() {
   }
+
+    featuredPhotoSelected(event: any){
+      const i = event.target.files[0];
+     console.log(i);
+     const upload = this.storageRef.child(i.name).put(i);
+     upload.on('state_changed', snapshot => {
+       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+       console.log('upload is: ', progress , '% done.');
+     }, err => {
+     }, () => {
+       upload.snapshot.ref.getDownloadURL().then(dwnURL => {
+         console.log('File avail at: ', dwnURL);
+         this.room.pic = dwnURL;
+       });
+     });
+     }
+
   addRoom(room : room){
-    //  this.upload()
-    //this.featuredPhotoSelected();
+     //this.upload()
+    //this.featuredPhotoSelected(event);
         let newUser = this.ref.push();
       newUser.set({
         Room_name: room.name,
@@ -53,5 +70,5 @@ export class PageComponent implements OnInit {
        this.room.pic = null;
        this.router.navigateByUrl("/home");
       }
-  
+
 }

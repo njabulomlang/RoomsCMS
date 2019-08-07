@@ -9,16 +9,23 @@
    
     text-align: center;
     height: 100%;
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     flex-direction: column;
     font-family: 'Titillium Web', sans-serif;
-    background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781));
+    background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781)),url(https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80);
     background-repeat: no-repeat;
     background-size: cover;
     color: aliceblue;
+    object-fit: cover;
  
   }
-  .imp{
-   width: 300px;
-  }
+  button{
+    padding: 9px 25px;
+    background-color: rgba(51, 83, 114, 0.952);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    color:white;
+
+}

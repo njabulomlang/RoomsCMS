@@ -13,11 +13,11 @@
 <div class="flex-container">
 
 
-  
-  
 
-  
-  
+
+
+
+
 <div class="container">
 
 
@@ -29,8 +29,14 @@
     </div>
     <div class="form-group">
       <label for="pwd">Features</label>
-      <div> <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room features" name="name"></div>
+      <div> <input type="text" class="form-control-file" [(ngModel)]="room.feautures" placeholder="Room features" name="name"></div>
     </div>
+
+    <div class="form-group">
+      <label for="pwd">Room name</label>
+      <div> <input type="text" class="form-control-file" [(ngModel)]="room.name" placeholder="Room name" name="name"></div>
+    </div>
+
 
     <div class="form-group">
       <label for="pwd">Price</label>
@@ -50,8 +56,8 @@
 
 
 </div>
-<button (click)="addRoom(room)" full>Add room</button> 
+<button (click)="addRoom(room)" full>Add room</button>
 <br>
 
-  
+
 </div>

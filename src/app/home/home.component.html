@@ -1,116 +1,63 @@
-<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
 
-<header>
-  <img class="logo" src="" alt="">
-  <nav>
-    <ul class="nav_Links">
-      <li><a href="#">Profile</a></li>
+  <div class="navigation">
+    <br>
+    <ul>
 
+        
+
+      <li class="logo"><a href="#"></a>The Terminal</li>
+      <div class="share1">
+          <a href="#">HOME</a>
+          <a href="#">SERVICES</a>
+          <a href="#">CONTACTS</a>
+        </div>
+  
     </ul>
-  </nav>
-  <a class="cta" href="#"><button>Sign Out</button></a>
-</header>
-
-
-
-  <form>
-
-
-    <div class="cardcontainer">
-        <div class="picture" *ngFor="let item of rooms">
-            <div class="img">
-              <img src="{{item.Pic}}">
-            </div>
-
-            <div class="data">
-              <p>{{item.Description}}</p>
-              <p> {{item.Name}}</p>
-              <p> R{{item.Price}}</p>
-              <button [routerLink]="['/view', item.key]">View</button>
-            </div>
-
-
-          </div>
-    </div>
-
-
-      <div class="picture" *ngFor="let item of users">
-          <div class="img">
-            <img src="{{item.Profile_pic}}">
-          </div>
-
-          <div class="data">
-            <p>{{item.Fullname}}</p>
-            <p> {{item.Cellphone}}</p>
-
-            <!-- <button [routerLink]="['/view', item.key]">View</button> -->
-  
-
-
-  <!-- </form> -->
-
-  <!--
-<header>
-  <div class="wrapper">
-
-
-  <div class="logo">
-
-
   </div>
-  <ul class="nav-area">
-    <li><a href="">Profile</a></li>
-    <li><a href="">Signout</a></li>
-  </ul>
-</div>
-<div class="welcome-text">
-  <h2>Experiance the best hotel Experiance...</h2> <br>
-  <button class="btn">Add Room</button>
-</div>
 
-</header> -->
-
-<!-- <button style="margin-top: 5%" [routerLink]="['/add']" full>Add room</button> --> 
-
-
-<header>
-  <nav>
-  </nav>
-  <a class="cta" href="#"><button>Signout</button></a>
-</header>
-
-
-<div class="Box">
-  
-  <div class="one">
-<H1>Users</H1>
-  </div>
-  <div class="two">
-    <div class="two1"><h3>show</h3><img src="https://img.icons8.com/ultraviolet/40/000000/circled-chevron-right.png"></div>
-    <div class="two2"><h3>add</h3><img src="https://img.icons8.com/color/48/000000/add.png"></div>
-  </div>
-</div>
-<br>
-<div class="Box">
-    <div class="one">
-      <h1>Bookings</h1>
-  
-    </div>
-    <div class="two">
-        <div class="two1"><h3>show</h3><img src="https://img.icons8.com/ultraviolet/40/000000/circled-chevron-right.png"></div>
-        <div class="two2"><h3>add</h3><img src="https://img.icons8.com/color/48/000000/add.png"></div>
+  <div class="banner">
+    <div id="banner-content">
+      <h1>Conservation Efforts at Lake Tahoe Being Praised by Nation's Leaders</h1>
     </div>
   </div>
-<br>
-  <div class="Box">
-      <div class="one">
-        <h1>Rooms</h1>
-    
+
+  <div class="content">
+    <h3>The State's Latest Conservation Efforts Are Being Heralded By Nation's Top Leaders As Groundbreaking and Forward Thinking.</h3>
+    <span class="byline">Written By: James Jayce</span>
+ 
+    <p>Since 1980, the Lake Tahoe Interagency Monitoring Program (LTIMP) has been measuring stream discharge and concentrations of nutrients and sediment in up to 10 tributary streams in the Lake Tahoe Basin, California-Nevada. The objectives of the LTIMP are to acquire and disseminate the water quality information necessary to support science-based environmental planning and decision making in the basin. The LTIMP is a cooperative program with support from 12 federal and state agencies with interests in the Tahoe Basin. This data set, together with more recently acquired data on urban runoff water quality, is being used by the Lahontan Regional Water Quality Control Board to develop a program (mandated by the Clean Water Act) to limit the flux of nutrients and fine sediment to the Lake.</p>
+
+    <div class="row">
+        <div class="column">
+          <img src="https://images.unsplash.com/photo-1527634311077-9943f7df34e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" alt="Nature" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="https://images.unsplash.com/photo-1510965156882-b72babc7b619?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1341&q=80" alt="Snow" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="https://images.unsplash.com/photo-1556691362-0efabd07317d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="https://images.unsplash.com/photo-1512322255694-b56f4075cd82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Lights" style="width:100%" onclick="myFunction(this);">
+        </div>
       </div>
-      <div class="two">
-          <div class="two1"></div>
-    <div class="two2"></div>
-      </div>
-    </div>
+
+    <p>UC Davis remains a primary steward of the lake. The UC Davis Tahoe Environmental Research Center is dedicated to research, education and public outreach, and to providing objective scientific information for restoration and sustainable use of the Lake Tahoe Basin. Each year, it produces a well-publicized "State of the Lake" assessment report.</p>
+  </div>
+
+  <div class="share">
+    <a href="#">Share</a>
+    <a href="#">Mark as Favorite</a>
+    <a href="#">Mark as Read</a>
+  </div>
+
+</body>
+</html>
 
  
